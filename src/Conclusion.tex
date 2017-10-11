@@ -1,0 +1,18 @@
+% Conclusions.tex
+%==============================================================================
+\section{Conclusions}
+\label{sec:conclusions}
+%==============================================================================
+
+\noindent
+Cloud computing has offered several services to companies, which open the chance to leverage their business processes. These services frequently require the integration of different applications, which compose the software ecosystem. Thus, the companies need to rely on integration runtime systems tools that provide appropriate performance.
+
+Integration platforms are specialised software tools that allow keeping information on all these systems consistent and synchronised. Usually, an integration platform is composed of a domain-specific language, a development toolkit, a runtime system and monitoring tools. The runtime system is responsible for running integration solutions and therefore, its performance most often drives the decision of companies to chose an integration platform.
+
+In this article, we presented a survey about runtime systems, extracting proprieties, which that can have an impact on the performance of the runtime system.  Such properties allow to analyse runtime systems,.focusing on performance. These properties make up two dimensions: efficiency and fairness execution. Efficiency focuses on the efficient message processing within an integration solution and fairness execution focuses on the fair execution of tasks within an integration solution. 
+
+We compare the runtime system of ten different integration platforms and it was possible to identify that the runtime systems have advanced regarding efficiency, such as, most of them allow that the number of threads in a thread pool can increase automatically during runtime until a threshold defined at design time is reached; most of them store messages in memory and on disk; everyone are able to distribute the processing. On the other hand, none has designed to take advantage of multi-core and none is able to creation dynamically thread pool.
+
+However, the platforms have few functionalities that allow the fair execution of the tasks. This can be concluded due to runtime systems: none is able to detect tasks that have been waiting for a long time to be executed, that is, starvation detect; most of them uses basic heuristics as scheduling policy to tasks; none knows their computational complexity of these tasks; most of them adopts the execution model process-based; only the smallest part of them has some kind of throttling controller for to limit the incoming rate.
+
+Based on these findings, we will consider as research directions in order to achieve better performance results of the runtime systems of the integration platforms, the following proprieties: designed for multi-core, thread pool configuration, thread pool creation of efficiency dimension and starvation detection, thread pool policy, task complexity of fairness execution dimension. For these issues, we find, in the literature, several approaches that motivate us to deepen our research.

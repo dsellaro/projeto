@@ -1,0 +1,50 @@
+
+% Introduction.tex
+%==============================================================================
+\section{Introduction}
+\label{sec:introduction}
+%==============================================================================
+
+%-- Context
+\noindent 
+Companies often need to use their software ecosystems~\cite{messerschmitt:2005} to support and improve their business processes. These ecosystems are composed of many applications, usually designed without taking into account their possible integration. Within the area of Software Engineering, the field of studies known as Enterprise Integration Applications (EAI)~\cite{frantz2016} seek to provide methodologies, techniques and tools for the design and implementation of integration solutions. In general terms, an integration solution aims to orchestrate a set of applications to keep them synchronized or provide new features that can be built from those already developed. An integration solution is composed of processes that contain the integration logic and ports that encapsulate adapters for communication protocols, which connect ecosystem processes or applications to the integration solution.
+
+Integration platforms are specialised software tools that provide support to design, implement, run, and monitor integration solution. 
+In the last years, many integration platforms have been created by the EAI community. These platforms have been heavily influenced by the catalogue of conceptual integration standards documented by Hohpe and Woolf~\cite{hohpe2004} and adopt the architectural style of pipes-and-filters~\cite{alexander1977}. In an integration solution, pipes represent message channels, and filters represent atomic tasks that implement a concrete integration pattern to process encapsulated data in messages. The adoption of this architecture allows to unsynchronised the tasks that make up the integration solution.
+
+There are several open source platforms that can be used to build integration solutions such as Mule~\cite{dossot2014}, Camel~\cite{isen2010}, Spring Integration~\cite{fisher2012}, Synapse~\cite{rademakers2008,jayasinghe2011}, Fuse~\cite{russell2012}, ServiceMix~\cite{konsek2013}, Petals~\cite{surhone2010}, Jitterbit~\cite{russell2012_1}, WSO2 ESB~\cite{indrasiri2016} and Guaraná~\cite{frantz2012}. Usually, these integration platforms provide a domain-specific language, development toolkit, test environment, monitoring tool, and runtime system. The domain-specific language is focused on the elaboration of conceptual models for the integration solution, with a level of abstraction close to the domain of the problem. The development kit is a set of software tools that allows the implementation of the solution, that is, the transformation of the conceptual model to the executable code. The testing environment allows testing individual parts or the entire integration solution, with the aim of identifying and eliminating possible defects in the implementation of the same. The monitoring tool is used to monitor, at runtime, the operation of the integration solution and detect errors that may occur during message processing. The runtime system provides all the support required to run these integration solutions.
+
+Cloud Computing~\cite{NIST:2011} is another field of research that has drawn the attention of the scientific community and represents a new paradigm of development, commercialization and use of software. This field has been transforming the current software ecosystems and revolutionizing the way companies provide computer support to their business processes. Cloud computing enables companies to contract service packages by dramatically reducing their total cost of ownership (TCO) with the information technology (IT) infrastructure, without sacrificing the quality of the IT support provided to their business processes. This is due mainly to the pay-as-you-go charging model that allows users to rate cloud computing based on the amount of computing resources consumed~\cite{buyya:2009,SOUSA:2009}. Along with the pay-as-you-go model, cloud computing has also brought the elasticity feature, which allows for incremental and decreasing computational resources to better meet the demands of applications running on the cloud infrastructure~\cite{DIAS:2015}.
+The advancement of cloud computing technologies has led companies to a major transformation in their software ecosystem, which now includes on-premise applications, migrated applications for virtual machines in the cloud, social media applications and many other software services available in the cloud. 
+
+%-- What is the problem? 
+The quality of service that integration solutions are able to achieve in terms of message processing, is directly related to the runtime system the integration platform. Typically, in order to achieve the desired quality of service with an integration solution, software engineers have increased computational resources in the server machine on which the integration platform is installed within the enterprise. This approach links the increased performance of an integration solution to the increase in financial costs required to augment the current hardware or the purchase of a new server with greater processing power that can generate the desired impact on the performance of the runtime systems, thus increasing the number of messages processed by the integration solutions.
+The hiring of virtual machines in the cloud to host the integration platforms allows a reduction of the total cost of ownership for the realization of the EAI by the companies, as well as through the feature of elasticity of the cloud, a greater flexibility for the increment of computational resources.
+
+This in itself has led companies to want to migrate integration platforms and run their integration solutions in the cloud. The migration of integration platforms to virtual machines in the cloud has given rise to a new service model that is being referred to by the EAI community as integration Platform-as-a-Service (iPaaS)~\cite{pezzini2011}. Data from 2015 show that, together, Latin America, Central America and North America account for 67\% of the market for iPaaS integration platforms, followed by Europe, the Middle East and Africa, which together account for 22\%, and Asia and the Pacific with 11\% of this market, and these values should remain, with little oscillation, by the end of 2019~\cite{sharma2015}. The traditional market for integration platforms used on-premise registered growth of less than 10\% in 2016, while the market for iPaaS integration platforms had a 60\% expansion over the previous year, representing a global market of 700 million Dollars~\cite{guttridge2017}. As early as 2017, two out of three application integration projects are developed directly with cloud integration platforms~\cite{pezzini2015}. The investment made by companies in iPaaS integration platforms will increase by 40\% by 2019~\cite{sharma2015}, making iPaaS the preferred integration platform by companies and with annual revenue growth higher than the traditional platform market Of integration used on-premise~\cite{guttridge2017,sharma2017}.
+
+%-- % %-- Why it is a problem?
+Given the high investments in iPaaS integration platforms, a research effort is needed to study and adapt these platforms to the new paradigm that represents cloud computing. In this context, the efficiency of runtime systems is fundamental since a number of computing resources in the cloud follows the pay-as-you-go model, and therefore has a direct impact on the financial cost involved in executing the solutions. The higher the efficiency of runtime systems, the less computational resources will need to be contracted or consumed in order for an integration solution to achieve the expected quality of service. In this article, performance is defined as the ability to process more messages per unit of time, without having to increase the number of computational resources allocated to the runtime system.
+
+% %-- Our solution
+In this proposal, we list ten properties of the runtime systems of integration platforms, divided in two dimensions,  that allow to evaluate the ability to process messages efficiently and ensure a fair execution of tasks. We evaluate theses proprieties in runtime systems of popular integration platforms and we observe that they are not sufficiently adapted to the context of the cloud computing. Based on this survey, we present research directions, that will contribute to migrate and adapt integration technologies to this context.
+
+The rest of this article is organised as follows: Section~\ref{sec:statement} presents the thesis statement and research objectives; Section~\ref{sec:priorwork} presents prior work and current art; Section~\ref{sec:methodology} presents the methodology; Section~\ref{sec:survey} presents our survey, describing the dimensions and their respective properties from which we have revised the integration platform and the issues to investigated derived them; Section~\ref{sec:validation} reports how results will be judged and interpreted; Section~\ref{sec:schedule} shows a time-table for achieving key objectives, and plans in cases where goals are not met by specific target dates; and, finally, Section~\ref{sec:conclusions} presents the concluding remarks.
+
+% \begin{itemize}
+% \item
+% the thesis statement and research objectives;
+% \item
+% prior work and current art---other approaches to the problem and
+% their drawbacks;
+% \item
+% methodology and experiment---including background research
+% to be done, necessary equipment and algorithmic techniques, and general
+% plan-of-attack;
+% \item
+% analysis and validation---how results will be judged and interpreted;
+% \item
+% a time-table for achieving key objectives, and one or more fall-back plans
+% in cases where goals are not met by specific target dates;
+% \item concluding remarks.
+% \end{itemize}
