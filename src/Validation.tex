@@ -9,5 +9,25 @@
 
 This section describes the model validated by means whose the solutions found for the implementation of a more efficient runtime system will be validated. 
 
+%==============================================================================
+\subsection{Statistical basis}
+\label{subsec:statistical}
+%==============================================================================
 
-First, 
+According to the Law of Large Numbers~\cite{hoeffding1961}, in a performance comparison of execution of applications between runtime systems, when the number of performance observations is infinite, then the performance distribution of each runtime system, as well as its quantitative features, can be accurately captured, becoming this comparison straightforward and accurate. However, in practice, the number of collected performance observations is limited, then it is necessary to introduce a quantitative indicator of confidence to judge whether a comparison result corresponds to a stochastic effect or whether it is significant enough to accept.
+
+Usually, estimating confidences of performance evaluations use parametric statistic \textit{t}-statistics. However, in the context of runtime system performance, \textit{t}-statistics require the sample mean of the performance observations to be distributed normally, which must be guaranteed by either a normal performance distribution or a sufficiently large number of performance observations~\cite{sitthi2006}. For validation of the proposed runtime system, it will be used the Hierarchical Performance Testing (HPT) framework, based on non-parametric statistics, which provide a good quantitative estimate of the confidence and it is significantly more practical than standard \textit{t}-statistics, because it does not require to collect a large number of performance observations in order to achieve a normal distribution of sample mean.~\cite{chen2015}. 
+
+%==============================================================================
+\subsubsection{Non-parametric Hierarchical Performance Testing framework}
+\label{subsubsec:statistical}
+%==============================================================================
+
+In HPT, performance samples of a runtime system $X$ and of a runtime system $Y$ can be represented by performance matrices $S_{X}={\left [ x_{i,j} \right ]}_{m \ast  n}$ and  $S_{Y}={\left [ y_{i,j} \right ]}_{m \ast  n}$, respectively, where $n$ is a total number benchmark applications and $m$ is a total number of repetitions of execution of the application. So, the performance scores of $X$ and $Y$ at their $j-th$ runs on the $i-th$ benchmark is $x_{i,j}$ and  $y_{i,j}$ respectively. For the corresponding rows of $S_{X}$ and $S_{Y}$.
+
+HPT establishes as the null hypothesis and the alternative hypothesis of Statistical Hypothesis Test (SHT):
+
+The Wilcoxon Rank-Sum Test\cite{{wilcoxon1992} is used to investigate whether the difference between the performance score of $X$ and $Y$ is significant enough. The steps of Wilcoxon Rank-Sum Test are described as following:
+\begin{itemize}
+\item 
+\end{itemize}

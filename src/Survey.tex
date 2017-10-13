@@ -1,19 +1,21 @@
 % Survey.tex
 %==============================================================================
-\section{Survey}
+\section{Research Directions}
 \label{sec:survey}
 
+\noindent 
+This section presents the research issues which will be addressed in our thesis. We elaborate a comparison framework under the perspective of the performance of the execution engines of the integration platforms. Then we apply our framework to ten known platforms and from the results we extract research problems.
 %==============================================================================
 \subsection{{Framework}}
 \label{subsec:framework}
 %==============================================================================
 
 \noindent 
-We present a framework composed of two dimensions: efficiency and fairness execution, which contain properties that can have an impact on the performance of the runtime system. The dimensions and their respective properties are detailed below.
+Our framework is composed of two dimensions: efficiency and fairness execution, which contain properties that can have an impact on the performance of the runtime system. The dimensions and their respective properties are detailed below.
 
 %==============================================================================
-\subsection{{Efficiency}}
-\label{subsec:efficiency}
+\subsubsection{{Efficiency}}
+\label{subsubsec:efficiency}
 %==============================================================================
 This dimension relates to improving the efficiency of the runtime system to process a message, which can also be seen as increasing the average number of messages processed by time unit. It comprises the following properties that relates to the capacity of reducing the real-time demanded by the integration solution to completely process a message:
 \begin{itemize} 
@@ -108,7 +110,7 @@ Every runtime system implement process-based execution model, in which the runti
 Mule, Spring, Synapse and Jitterbit allow to control the rate of incoming messages on incoming ports; the others have not throttling controller.
 
 %==============================================================================
-\subsection{{Research Directions}}
+\subsection{{Research problems}}
 \label{subsec:problems}
 %==============================================================================
 
@@ -118,7 +120,7 @@ In this section, we identify some research directions found out in this survey, 
 
 \begin{table}[hbtp]
 	\centering
-	%\caption{Issues to investigated.}
+	\caption{Issues to investigated.}
 	\includegraphics[scale=0.9]{./figs/issues.eps}
 	%\includegraphics[width=\linewidth]{./figs/issues.eps}
 \label{tab:problems}%
